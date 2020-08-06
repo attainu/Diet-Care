@@ -1,12 +1,11 @@
 import React from "react";
-import Search from "./search/Search";
 import "./App.css";
+import Homepage from "./Pages/Homepage";
 
 function App() {
   return (
     <div className="App">
-      Hello world
-      <Search doSomething={() => console.log("Done something")} />
+      <Homepage />
     </div>
   );
 }

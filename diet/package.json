@@ -1,13 +1,16 @@
 {
-  "name": "day-4",
+  "name": "dietcare",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "jest": "^26.2.2",
-    "parcel": "^1.12.4",
-    "parcel-bundler": "^1.12.4",
-    "puppeteer": "^5.2.1",
-    "puppeteer-core": "^5.2.1"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "bootstrap": "^4.5.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "reactstrap": "^8.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

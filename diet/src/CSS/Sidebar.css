@@ -1,0 +1,38 @@
+.dietcare-sidebar {
+  width: 20%;
+  border-right: 5px solid rgb(236, 235, 235);
+}
+.sidebar-ul {
+  list-style: none;
+}
+.sidebar-ul li {
+  font-size: 1rem;
+  border-top: 1px solid rgb(236, 235, 235);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.sidebar-ul li i {
+  color: rgb(121, 118, 118);
+}
+.dropdown-options ul {
+  padding-left: 15px;
+}
+
+.dropdown-options ul li {
+  display: flex;
+  border: none;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+.dropdown-options ul li i {
+  color: rgb(121, 118, 118);
+  font-size: 14px;
+}
