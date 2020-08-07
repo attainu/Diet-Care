@@ -9,7 +9,7 @@ const Navbar = () => {
       <Search />
       <ul className="navbar-ul">
         <li>
-          <i class="fas fa-user"></i> My Profile
+          <i className="fas fa-user"></i> My Profile
         </li>
         <li>Login/Signup</li>
       </ul>
