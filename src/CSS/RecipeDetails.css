@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap');
+
+.detailPage {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+    padding: 10px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.recipe__title {
+    flex-basis: 45%
+}
+
+.recipe__title h1 {
+    font-weight: 800;
+}
+
+.recipe__title span {
+    margin: 10px;
+    font-size: 20px;
+    color: rgb(105, 109, 109);
+
+}
+
+.recipe__title img {
+    width: 45vw;
+    margin-top: 10px;
+}
+
+.recipe__ingredients {
+    flex-basis: 50%;
+    text-align: center;
+    padding-top: 90px;
+    /* border: 2px solid black; */
+    /* margin: 20px; */
+}
+
+.recipe__ingr__para{
+    text-align: left;
+    padding-left: 30px;
+}
+
+.recipe__ingr__para span{
+    font-size: 50px;
+    /* line-height: 0; */
+}
+
+.recipe__ingredients__info{
+    text-align: left;
+    padding-left: 100px;
+}
+
+.recipe__ingr__info{
+    margin-bottom: 20px;
+    color: rgb(105, 109, 109);
+
+}

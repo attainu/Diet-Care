@@ -27,6 +27,7 @@
   padding: 8px 8px;
   display: flex;
   align-items: center;
+  margin-right: 20px;
   cursor: pointer;
   transition-duration: 0.2s;
 }
