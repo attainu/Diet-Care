@@ -2,14 +2,18 @@
   border: 1px solid rgb(187, 184, 184);
   margin-bottom: 15px;
   height: 320px;
+  width: 312px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 .dietcare-recipe-card h2 {
-  font-size: 2rem;
-  font-weight: 500;
+  margin-top: 5px;
+  padding: 0 15px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
 }
 .dietcare-recipe-card p {
   font-size: 1rem;
