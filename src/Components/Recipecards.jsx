@@ -6,7 +6,7 @@ import { fetchRecipes } from "../redux/actions/recipeAction";
 
 export class Recipecards extends Component {
   componentDidMount() {
-    this.props.fetchRecipes("pasta");
+    this.props.fetchRecipes("");
   }
   render() {
     return (

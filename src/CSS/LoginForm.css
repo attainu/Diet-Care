@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap');
+
+
+.loginForm {
+    background-image: url(../images/wave.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.loginForm form {
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    text-align: center;
+}
+
+.loginForm-card {
+    display: flex;
+    width: 70vw;
+    height: 70vh;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+
+}
+
+.login-image {
+    flex-basis: 50%;
+}
+
+.login-image img {
+    width: 30vw;
+    height: 50vh;
+    margin-top: 80px;
+}
+
+.login-info {
+    flex-basis: 50%;
+    margin: 70px 0px;
+    text-align: center;
+    width: max-content;
+    padding-left: 80px;
+}
+
+.login-info h1{
+    color: #ffc400b2;
+    font-weight: bold;
+    font-size: 60px;
+
+}
+
+.login-info Input{
+    margin: 10px 0;
+    height: 40px;
+    width: 300px;
+}
+
+.login-info Button{
+    margin: 15px 0;
+    width: 200px;
+    border-radius: 30px;
+}

@@ -10,7 +10,7 @@ export const fetchRecipes = (searchquery) => {
   return async (dispatch) => {
     setSearchValue(searchquery);
     const { data } = await axios(
-      `${keys.BASE_URL}/recipes/complexSearch?apiKey=${keys.API_KEY}&query=${searchquery}`
+      `${keys.BASE_URL}/recipes/complexSearch?apiKey=${keys.API_KEY}&number=10&query=${searchquery}`
     );
     console.log(data);
     dispatch({

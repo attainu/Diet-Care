@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../images/food.jpg";
 import "../CSS/RecipeDetails.css";
+import Button from "./Button";
 
 const RecipeDetails = () => {
   return (
@@ -29,6 +30,12 @@ const RecipeDetails = () => {
           <div className="recipe__ingr__info">
             <h4>Butter</h4>
             <span>1 tbsp butter</span>
+            <Button
+              heading="Ingrident's Substitute"
+              item1="1 cup = 7/8 cup vegetable oil + 1/2 tsp salt"
+              item2="1 cup = 7/8 cup shortening and 1/2 tsp salt"
+              item3="1 cup = 1 cup margarine"
+            />
           </div>
           <div className="recipe__ingr__info">
             <h4>Cauliflower Florets</h4>
@@ -36,10 +43,22 @@ const RecipeDetails = () => {
               about 2 cups frozen cauliflower florets, thawed, cut into
               bite-sized pieces
             </span>
+            <Button heading="Ingrident's Substitute" />
           </div>
           <div className="recipe__ingr__info">
             <h4>Cheese</h4>
             <span>2 tbsp grated cheese (I used romano)</span>
+            <Button heading="Ingrident's Substitute" />
+          </div>
+          <div className="recipe__nutrients">
+            <Button
+              size="lg"
+              heading="Nutritional Info"
+              item1="Calories: 281g"
+              item2="Protein: 22g"
+              item3="Carbs: 68g"
+              item4="Fat: 9g"
+            />
           </div>
           {/* <button>Add the INGREDIENTS to cart</button> */}
         </div>
@@ -50,7 +69,8 @@ const RecipeDetails = () => {
 
 export default RecipeDetails;
 
-{/* <div className="recipe__ingr__para">
+{
+  /* <div className="recipe__ingr__para">
   <h5>
     Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs might be a good
     recipe to expand your main course repertoire. One portion of this dish
@@ -65,4 +85,5 @@ export default RecipeDetails;
     this recipe <b>deserves a spoonacular score of 83% </b>. This score is
     awesome.
   </h5>
-</div>; */}
+</div>; */
+}

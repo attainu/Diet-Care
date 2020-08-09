@@ -36,23 +36,41 @@
     /* margin: 20px; */
 }
 
-.recipe__ingr__para{
+.recipe__ingredients h2 {
+    text-decoration: underline;
+}
+
+.recipe__ingr__para {
     text-align: left;
     padding-left: 30px;
 }
 
-.recipe__ingr__para span{
+.recipe__ingr__para span {
     font-size: 50px;
     /* line-height: 0; */
 }
 
-.recipe__ingredients__info{
+.recipe__ingredients__info {
     text-align: left;
     padding-left: 100px;
 }
 
-.recipe__ingr__info{
+.recipe__ingr__info {
     margin-bottom: 20px;
     color: rgb(105, 109, 109);
+}
 
+.recipe__ingr__info span {
+    display: block;
+}
+
+.recipe__nutrients {
+    text-align: center;
+    margin-top: 172px;
+
+}
+
+.recipe__nutrients Button {
+    width: 300px;
+    text-align: center;
 }

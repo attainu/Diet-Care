@@ -2,6 +2,8 @@ import React from "react";
 import "../CSS/Recipecarditem.css";
 
 const Recipecarditem = (props) => {
+  console.log(props.recipe.title);
+  
   return (
     <div className="dietcare-recipe-card">
       <img src={props.recipe.image} alt="recipe cards" />
