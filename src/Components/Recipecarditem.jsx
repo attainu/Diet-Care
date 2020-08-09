@@ -1,14 +1,11 @@
 import React from "react";
 import "../CSS/Recipecarditem.css";
 
-const Recipecarditem = () => {
+const Recipecarditem = (props) => {
   return (
     <div className="dietcare-recipe-card">
-      <img
-        src="https://spoonacular.com/recipeImages/749013-312x231.jpeg"
-        alt="recipe cards"
-      />
-      <h2>Pasta</h2>
+      <img src={props.recipe.image} alt="recipe cards" />
+      <h2>{props.recipe.title}</h2>
       <p>
         <span>Fat: 23.4934g</span>
       </p>
