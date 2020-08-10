@@ -1,0 +1,19 @@
+.mealplans-navbar {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+.mealplans-navbar h1 {
+  display: inline-block;
+  color: rgb(70, 68, 68);
+  font-size: 1.8rem;
+}
+
+.mealplans-navbar span {
+  background-color: #ed9702;
+  color: white;
+  padding: 8px;
+}

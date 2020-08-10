@@ -1,0 +1,72 @@
+.create_mealplan {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  height: 77vh;
+  justify-content: space-between;
+  padding-left: 60px;
+}
+.create_mealplan img {
+  width: 50%;
+  height: 100%;
+}
+.createmeal_card {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 0 7px -1px;
+  list-style: none;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.template_input {
+  background-color: #c2c2c2;
+  width: 70%;
+  color: white;
+  height: 35px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px solid black;
+  border-radius: 3px;
+  padding: 0 10px;
+  position: relative;
+  cursor: pointer;
+}
+.template_input i {
+  color: black;
+}
+.template_input h3 {
+  font-size: 1.3 rem;
+  font-weight: 500;
+  color: #212529;
+}
+.create_mealplan button {
+  background-color: #ed9702;
+  color: white;
+  padding: 4px 30px;
+  border: 2px solid #f15025;
+  border-radius: 3px;
+}
+.template_popup {
+  position: absolute;
+  top: 20px;
+  background-color: #e4e4e4;
+  color: black;
+  list-style: none;
+  top: 34px;
+  left: 0px;
+  width: 100%;
+}
+.template_popup li {
+  border-bottom: 0.5px solid rgb(105, 105, 105);
+  border-left: 0.5px solid rgb(105, 105, 105);
+  border-right: 0.5px solid rgb(105, 105, 105);
+  font-size: 1rem;
+  padding: 3px 0 3px 3px;
+  cursor: pointer;
+}

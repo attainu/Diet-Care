@@ -1,0 +1,25 @@
+* {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+.meals_card {
+  background-image: linear-gradient(to bottom, #f8a27e, #f76681);
+  width: 30%;
+  box-shadow: 0 0 10px -3px black;
+  border-radius: 5px;
+  padding: 7px 0 7px 15px;
+  color: rgb(61, 60, 60);
+  margin-bottom: 20px;
+}
+ul {
+  list-style: none;
+}
+.meal_date li {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.meal_slot {
+  margin-top: 5px;
+  color: white;
+  font-size: 1.1rem;
+}
