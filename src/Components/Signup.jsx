@@ -1,11 +1,27 @@
 import React, { Component } from "react";
-import Input from "./Input";
 import "../CSS/LoginForm.css";
 import Logo from "../images/foodbg.jpg";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { userSignup } from "../redux/actions/userActions";
+import { connect } from "react-redux";
 
 export class Signup extends Component {
+  state = {
+    userName: "",
+    email: "",
+  };
+  handleInput = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+  handleClick = () => {
+    this.props.userSignup({
+      username: this.state.userName,
+      email: this.state.email,
+    });
+    this.setState({ userName: "", email: "" });
+  };
+
   render() {
     return (
       <div className="loginForm">
@@ -17,21 +33,23 @@ export class Signup extends Component {
             <form>
               <h1>Sign Up</h1>
               <p>Get your shopping list, meal plans and much more</p>
-              <Input
+              <input
+                onChange={this.handleInput}
                 type="text"
-                name="username"
+                name="userName"
                 placeholder="Your Full Name"
-                value=""
+                value={this.state.userName}
               />
               <br />
-              <Input
+              <input
+                onChange={this.handleInput}
                 type="email"
                 name="email"
                 placeholder="Your E-mail"
-                value=""
+                value={this.state.email}
               />
               <br />
-              <Button size="lg" color="warning">
+              <Button onClick={this.handleClick} size="lg" color="warning">
                 Get credentials
               </Button>{" "}
               <p>
@@ -48,4 +66,4 @@ export class Signup extends Component {
   }
 }
 
-export default Signup;
+export default connect(null, { userSignup: userSignup })(Signup);

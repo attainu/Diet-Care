@@ -1,11 +1,27 @@
 import React, { Component } from "react";
-import Input from "./Input";
 import "../CSS/LoginForm.css";
 import Logo from "../images/foodbg.jpg";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { userLogin } from "../redux/actions/userActions";
+import { connect } from "react-redux";
 
 class Login extends Component {
+  state = {
+    userName: "",
+    hash: "",
+  };
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+  handleClick = () => {
+    const user = {
+      username: this.state.userName,
+      hash: this.state.hash,
+    };
+    this.props.userLogin(user);
+    this.setState({ userName: "", hash: "" });
+  };
   render() {
     return (
       <div className="loginForm">
@@ -17,24 +33,30 @@ class Login extends Component {
             <form>
               <h1>Login</h1>
               <p>Get your shopping list, meal plans and much more</p>
-              <Input
+              <input
+                onChange={this.handleChange}
                 type="text"
-                name="username"
+                name="userName"
                 placeholder="Enter Username"
-                value=""
+                value={this.state.userName}
               />
               <br />
-              <Input
-                type="text"
-                name="uniqueId"
-                placeholder="Enter Unique ID"
-                value=""
+              <input
+                onChange={this.handleChange}
+                type="password"
+                name="hash"
+                placeholder="Enter your unique hash"
+                value={this.state.hash}
               />
               <br />
-              <Button size="lg" color="warning">Login</Button>{" "}
+              <Button size="lg" color="warning" onClick={this.handleClick}>
+                Login
+              </Button>{" "}
               <p>
                 Don't have credentials?{" "}
-                <Link style={{textDecorationLine: "none"}} to="/signup">Create new credentials</Link>{" "}
+                <Link style={{ textDecorationLine: "none" }} to="/signup">
+                  Create new credentials
+                </Link>{" "}
               </p>
             </form>
           </div>
@@ -44,4 +66,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect(null, { userLogin: userLogin })(Login);
