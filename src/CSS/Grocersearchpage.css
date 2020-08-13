@@ -1,0 +1,13 @@
+.grocery-navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcf9f9;
+}
+.grocer_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
