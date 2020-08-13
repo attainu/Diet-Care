@@ -5,7 +5,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import RecipeDetailPage from "./Pages/RecipeDetailPage";
 import LoginPage from "./Pages/LoginPage";
 import SignupPage from "./Pages/SignupPage";
-import Mealplanspage from "./Pages/Mealplanspage";
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
         <Route exact path="/recipe" component={RecipeDetailPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignupPage} />
-        <Route exact path="/mealplans" component={Mealplanspage} />
+
         <Redirect to="/" />
       </Switch>
     </div>

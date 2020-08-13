@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-
 import "../CSS/Mealplanspage.css";
 import Mealplans from "../Components/Mealplans";
 

@@ -1,6 +1,6 @@
 import { SET_USER, TOGGLE_USER_FETCHING_STATE } from "../actionTypes";
 const initialState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user")) || null,
   userfetchingState: false,
 };
 
