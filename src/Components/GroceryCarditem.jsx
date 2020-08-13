@@ -1,14 +1,20 @@
 import React from "react";
 import "../CSS/Grocercarditem.css";
 
-const groceryCarditem = () => {
+const groceryCarditem = (props) => {
+  console.log(props);
+
+  const titleShorter = (title) => {
+    if (title.length <= 40) {
+      return title;
+    } else {
+      return `${title.slice(0, 39)}...`;
+    }
+  };
   return (
     <div className="grocery_card">
-      <img
-        src="https://spoonacular.com/productImages/181334-312x231.jpg"
-        alt="food image"
-      />
-      <h2>Butter Chicken</h2>
+      <img src={props.product.image} alt="food image" />
+      <h2>{titleShorter(props.product.title)}</h2>
       <button>Add to Shopping List</button>
     </div>
   );

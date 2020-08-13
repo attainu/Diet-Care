@@ -1,6 +1,6 @@
 .grocery_card {
   width: 24%;
-  height: 320px;
+  height: 335px;
   border: 0.5px solid #ccc;
   box-shadow: 0 0 2px -1px;
   display: flex;
@@ -8,11 +8,18 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 .grocery_card h2 {
   font-size: 1.2rem;
-  font-weight: 450;
+  font-weight: 500;
   color: rgb(85, 83, 83);
+  padding: 0 10px;
+  text-align: center;
+}
+.grocery_card img {
+  width: 231px;
+  height: 231px;
 }
 .grocery_card button {
   background-color: #ff7e1a;
