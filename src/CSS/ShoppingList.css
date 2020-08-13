@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap');
+
+.shop {
+    padding: 50px 200px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.shop th {
+    color: #ed9702;
+    text-align: center;
+}
+
+.shop td {
+    text-align: center;
+}
+
+.shop tr button {
+    background-color: #ed9702;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20%;
+}
+
+.shop button{
+    background-color: #ed9702;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+}
+
+.shop tr button:hover{
+    background-color: red;
+}
+
+.shop td:hover{
+    background-color: #eed5ab;
+}

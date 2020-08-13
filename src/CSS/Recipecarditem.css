@@ -1,21 +1,54 @@
-.dietcare-recipe-card {
-  border: 1px solid rgb(187, 184, 184);
-  margin-bottom: 15px;
-  height: 320px;
-  width: 312px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.dietcare-recipe-card h2 {
-  margin-top: 5px;
-  padding: 0 15px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap');
+
+.recipe-card {
   text-align: center;
-  font-size: 1rem;
-  font-weight: 400;
+  flex-basis: 30%;
+  margin: 1.5rem;
+  border-radius: 0%;
+  border: 0px solid black;
+  font-family: 'Roboto Slab', serif;
 }
-.dietcare-recipe-card p {
-  font-size: 1rem;
-  font-weight: 400;
+
+.card-img-top {
+  overflow: hidden;
+  border: 0px solid transparent;
+}
+
+.card hr {
+  width: 100%;
+  background-color: black;
+  height: 0.08rem;
+  text-align: center;
+  width: 10vw;
+  text-align: center;
+  margin-left: 7.2rem;
+}
+
+.btn-secondary {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)
+}
+
+.btn-secondary:hover {
+  background: transparent !important;
+  font-size: 1.2rem;
+}
+
+.card {
+  border: 0px !important;
+  width: 25vw !important;
+
+}
+
+.card-body {
+  background-color: #FFE53B;
+  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+  height: 4rem;
+
 }

@@ -1,9 +1,11 @@
 import {
   SET_RECIPE_DETAIL,
   TOGGLE_RECIPE_DETAIL_FETCHING_STATE,
+  SET_SUBSTITUTE
 } from "../actionTypes";
 const initialState = {
   recipeDetail: "",
+  substitute: "",
   isFetchingRecipeDetail: false,
 };
 
@@ -17,6 +19,7 @@ const recipeDetailReducer = (state = initialState, action) => {
         ...state,
         isFetchingRecipeDetail: !state.isFetchingRecipeDetail,
       };
+      case SET_SUBSTITUTE: return {...state, substitute:payload}
     default:
       return state;
   }

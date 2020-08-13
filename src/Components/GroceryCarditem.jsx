@@ -13,8 +13,13 @@ const groceryCarditem = (props) => {
   };
   return (
     <div className="grocery_card">
-      <img src={props.product.image} alt="food image" />
+      <img src={props.product.image} alt="food" />
       <h2>{titleShorter(props.product.title)}</h2>
+      <img
+        src="https://spoonacular.com/productImages/181334-312x231.jpg"
+        alt="food"
+      />
+      <h2>Butter Chicken</h2>
       <button>Add to Shopping List</button>
     </div>
   );
