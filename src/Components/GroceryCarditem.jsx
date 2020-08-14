@@ -1,8 +1,18 @@
 import React from "react";
 import "../CSS/Grocercarditem.css";
+import { connect } from "react-redux";
+import { addItemtoShoppingList } from "../redux/actions/shoppingActon";
 
 const groceryCarditem = (props) => {
   console.log(props);
+  const handleclick = () => {
+    const template = {
+      item: props.product.title,
+      parse: true,
+    };
+    console.log(template);
+    props.addItemtoShoppingList(props.userData, template);
+  };
 
   const titleShorter = (title) => {
     if (title.length <= 40) {
@@ -20,9 +30,16 @@ const groceryCarditem = (props) => {
         alt="food"
       />
       <h2>Butter Chicken</h2>
-      <button>Add to Shopping List</button>
+      <button onClick={handleclick}>Add to Shopping List</button>
     </div>
   );
 };
 
-export default groceryCarditem;
+const mapstatetoprops = (storeData) => {
+  return {
+    userData: storeData.userState.user,
+  };
+};
+export default connect(mapstatetoprops, {
+  addItemtoShoppingList: addItemtoShoppingList,
+})(groceryCarditem);
