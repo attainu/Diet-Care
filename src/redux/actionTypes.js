@@ -1,4 +1,5 @@
 export const SET_RECIPES = "SET_RECIPES";
+export const SET_SHOPPING_LIST_ITEM = "SET_SHOPPING_LIST_ITEM";
 export const SET_GROCERY_ITEMS = "SET_GROCERY_ITEMS";
 export const SET_USER = "SET_USER";
 export const SET_MEALPLANS = "SET_MEALPLANS";

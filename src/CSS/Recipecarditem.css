@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap");
 
 .recipe-card {
   text-align: center;
@@ -6,7 +6,7 @@
   margin: 1.5rem;
   border-radius: 0%;
   border: 0px solid black;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .card-img-top {
@@ -25,7 +25,12 @@
 }
 
 .btn-secondary {
-  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)
+  background-image: linear-gradient(
+    to right,
+    #e52d27 0%,
+    #b31217 51%,
+    #e52d27 100%
+  );
 }
 
 .btn-secondary:hover {
@@ -36,13 +41,11 @@
 .card {
   border: 0px !important;
   width: 25vw !important;
-
 }
 
 .card-body {
-  background-color: #FFE53B;
-  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
-
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
 }
 
 .card-title {
@@ -50,5 +53,4 @@
   font-size: 1.4rem;
   text-align: center;
   height: 4rem;
-
 }

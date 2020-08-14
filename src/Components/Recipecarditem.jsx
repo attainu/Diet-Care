@@ -1,18 +1,19 @@
 import React from "react";
 import "../CSS/Recipecarditem.css";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  Button,
-} from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, Button } from "reactstrap";
 
 const Recipecarditem = (props) => {
   console.log(props);
   // console.log(props.recipe.id);
+
+  const titleShorter = (title) => {
+    if (title.length <= 50) {
+      return title;
+    } else {
+      return `${title.slice(0, 49)}...`;
+    }
+  };
 
   return (
     <div className="recipe-card">
