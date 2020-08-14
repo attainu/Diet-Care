@@ -486,6 +486,9 @@ export class Sidebar extends Component {
                   border: "0.5px solid black",
                   borderRadius: "5px",
                   padding: "2px 15px",
+                  marginLeft: "10px",
+                  marginBottom: "10px",
+                  marginTop: "10px",
                 }}
               >
                 Get
