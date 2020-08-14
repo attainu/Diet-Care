@@ -7,6 +7,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  transition-duration: 0.2s;
+}
+.dietcare-recipe-card:hover {
+  transform: scale(1.05);
 }
 .dietcare-recipe-card h2 {
   margin-top: 10px;
