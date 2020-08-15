@@ -19,7 +19,11 @@ function App() {
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/searchGroceryItem" component={Groceysearchpage} />
         <Route exact path="/shoplist" component={ShoppingPage} />
-        <Route exact path="/shoplistDetail" component={ShoppingDetailPage} />
+        <Route
+          exact
+          path="/searchGroceryItem/:itemid"
+          component={ShoppingDetailPage}
+        />
         <Redirect to="/" />
       </Switch>
     </div>

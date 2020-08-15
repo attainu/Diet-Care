@@ -6,6 +6,7 @@ import {
 } from "../redux/actions/recipeAction";
 import { connect } from "react-redux";
 import "../CSS/Serach.css";
+import { Link } from "react-router-dom";
 
 export class Serach extends Component {
   constructor(props) {
@@ -44,15 +45,17 @@ export class Serach extends Component {
           aria-describedby="button-addon2"
         />
         <div className="input-group-append">
-          <button
-            onClick={this.handleclick}
-            style={{ background: "#C2C2C2", color: "white" }}
-            className="btn btn-outline-secondary"
-            type="button"
-            id="button-addon2"
-          >
-            Search
-          </button>
+          <Link to="/">
+            <button
+              onClick={this.handleclick}
+              style={{ background: "#C2C2C2", color: "white" }}
+              className="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Search
+            </button>
+          </Link>
         </div>
         {this.state.suggestionState ? (
           <ul>

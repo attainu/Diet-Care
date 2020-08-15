@@ -1,12 +1,27 @@
-import React from 'react'
-import ShoppingDetail from '../Components/ShoppingDetail'
+import ShoppingDetail from "../Components/ShoppingDetail";
+import React, { Component } from "react";
+import { getShoppingListitemDetail } from "../redux/actions/shoppingActon";
+import { connect } from "react-redux";
 
-const ShoppingDetailPage = () => {
+export class ShoppingDetailPage extends Component {
+  componentDidMount() {
+    this.props.getShoppingListitemDetail(this.props.match.params.itemid);
+  }
+  render() {
     return (
-        <div>
-            <ShoppingDetail />
-        </div>
-    )
+      <div>
+        <ShoppingDetail itemdetail={this.props.itemdetail} />
+      </div>
+    );
+  }
 }
 
-export default ShoppingDetailPage
+const mapstatetoprops = (storteData) => {
+  return {
+    itemdetail: storteData.shoppingState.itemDetail,
+  };
+};
+
+export default connect(mapstatetoprops, {
+  getShoppingListitemDetail: getShoppingListitemDetail,
+})(ShoppingDetailPage);

@@ -1,112 +1,64 @@
 import React, { Component } from "react";
-import "../CSS/ShoppingDetail.css"
+import "../CSS/ShoppingDetail.css";
+import { addItemtoShoppingList } from "../redux/actions/shoppingActon";
+import { connect } from "react-redux";
 
 export class ShoppingDetail extends Component {
+  handleClick = () => {
+    const template = {
+      item: this.props.itemdetail.title,
+      parse: true,
+    };
+    console.log(template);
+    this.props.addItemtoShoppingList(this.props.userData, template);
+  };
   render() {
-    return (
+    return !this.props.itemdetail ? (
+      <h1>Loading...</h1>
+    ) : (
       <>
         <div class="product">
           <div class="product__photo">
             <div class="photo-container">
               <div class="photo-main">
-                
                 <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png"
+                  src={this.props.itemdetail.images[0]}
                   alt="green apple slice"
                 />
               </div>
-              {/* <div class="photo-album">
-                <ul>
-                  <li>
-                    <img
-                      src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
-                      alt="green apple"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png"
-                      alt="half apple"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png"
-                      alt="green apple"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png"
-                      alt="apple top"
-                    />
-                  </li>
-                </ul>
-              </div> */}
             </div>
           </div>
           <div class="product__info">
             <div class="title">
-              <h1>Delicious Apples</h1>
-              {/* <span>COD: 45999</span> */}
+              <h1>{this.props.itemdetail.title}</h1>
             </div>
             <div class="price">
-              R$ <span>7.93</span>
+              R$ <span>{this.props.itemdetail.price}</span>
             </div>
-            {/* <div class="variant">
-              <h3>SELECT A COLOR</h3>
-              <ul>
-                <li>
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
-                    alt="green apple"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png"
-                    alt="yellow apple"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png"
-                    alt="orange apple"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png"
-                    alt="red apple"
-                  />
-                </li>
-              </ul>
-            </div> */}
+
             <div class="description">
               <h3>BENEFITS</h3>
               <ul>
-                <li>Apples are nutricious</li>
-                <li>Apples may be good for weight loss</li>
-                <li>Apples may be good for bone health</li>
-                <li>They're linked to a lowest risk of diabetes</li>
+                {this.props.itemdetail.badges.map((element) => {
+                  return <li>{element}</li>;
+                })}
               </ul>
             </div>
-            <button class="buy--btn">ADD TO CART</button>
+            <button onClick={this.handleClick} class="buy--btn">
+              ADD TO CART
+            </button>
           </div>
         </div>
-
-        {/* <footer>
-          <p>
-            Design from{" "}
-            <a href="https://dribbble.com/shots/5216438-Daily-UI-012">
-              dribbble shot
-            </a>{" "}
-            of <a href="https://dribbble.com/rodrigorramos">Rodrigo Ramos</a>
-          </p>
-        </footer> */}
       </>
     );
   }
 }
 
-export default ShoppingDetail;
+const mapstatetoprops = (storeData) => {
+  return {
+    userData: storeData.userState.user,
+  };
+};
+export default connect(mapstatetoprops, {
+  addItemtoShoppingList: addItemtoShoppingList,
+})(ShoppingDetail);

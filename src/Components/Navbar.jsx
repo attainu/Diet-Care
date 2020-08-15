@@ -7,13 +7,15 @@ import { connect } from "react-redux";
 const Navbar = (props) => {
   return (
     <div className="dietcare-navbar">
-      <img src={Logo} alt="logo" />
+      <Link to="/">
+        <img src={Logo} alt="logo" />
+      </Link>
       <Search />
 
       <ul className="navbar-ul">
-        <Link style={{ textDecoration: "none" }} to="/searchgroceryitem">
+        <Link style={{ textDecoration: "none" }} to="/shoplist">
           <li>
-            <i class="fas fa-shopping-basket"></i>Search
+            <i class="fas fa-shopping-basket"></i>Cart
           </li>
         </Link>
 
