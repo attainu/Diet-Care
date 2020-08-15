@@ -25,22 +25,31 @@
 }
 
 .btn-secondary {
-  background-image: linear-gradient(
-    to right,
-    #e52d27 0%,
-    #b31217 51%,
-    #e52d27 100%
-  );
+  background-image: linear-gradient(to right,
+      #e52d27 0%,
+      #b31217 51%,
+      #e52d27 100%);
+  transition: transform 0.7s;
+
 }
 
 .btn-secondary:hover {
   background: transparent !important;
-  font-size: 1.2rem;
+  transform: scale(1.2);
+
+
 }
 
 .card {
   border: 0px !important;
   width: 25vw !important;
+  transition: transform 0.4s;
+
+}
+
+.card:hover {
+  transform: scale(1.035);
+
 }
 
 .card-body {
