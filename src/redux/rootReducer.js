@@ -4,6 +4,7 @@ import { combineReducers } from "redux";
 import mealplansReducer from "./reducers/mealplansReducer";
 import recipeDetailReducer from "./reducers/recipeDetailReducer";
 import groceryReducer from "./reducers/groceryReducer";
+import shoppingReducer from "./reducers/shoppingReducer";
 
 const rootReducer = combineReducers({
   recipesState: recipeReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   recipeDetailState: recipeDetailReducer,
   substitute: recipeDetailReducer,
   grocerState: groceryReducer,
+  shoppingState: shoppingReducer,
 });
 
 export default rootReducer;
