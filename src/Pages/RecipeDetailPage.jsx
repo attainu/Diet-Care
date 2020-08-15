@@ -3,14 +3,14 @@ import Navbar from "../Components/Navbar";
 import { connect } from "react-redux";
 import {
   fetchRecipeDetail,
-  fetchSubstitute,
+  fetchSimilar,
 } from "../redux/actions/recipeDetailAction";
 import RecipeDetailCard from "../Components/RecipeDetailCard";
 
 class RecipeDetailPage extends Component {
   componentDidMount() {
     this.props.fetchRecipeDetail(this.props.match.params.recipeId);
-    this.props.fetchSubstitute(this.props.ingredientSubstitute);
+    this.props.fetchSimilar(this.props.match.params.recipeId);
   }
   render() {
     return (
@@ -19,7 +19,7 @@ class RecipeDetailPage extends Component {
         {
           <RecipeDetailCard
             recipeDetail={this.props.currentRecipe}
-            substitute={this.props.ingredientSubstitute}
+            similar={this.props.recipeSimilar}
           />
         }
       </div>
@@ -30,10 +30,10 @@ class RecipeDetailPage extends Component {
 const mapStateToProps = (storeState) => {
   return {
     currentRecipe: storeState.recipeDetailState.recipeDetail,
-    ingredientSubstitute: storeState.recipeDetailState.substitute,
+    recipeSimilar: storeState.recipeDetailState.similar,
   };
 };
 
-export default connect(mapStateToProps, { fetchRecipeDetail, fetchSubstitute })(
+export default connect(mapStateToProps, { fetchRecipeDetail, fetchSimilar })(
   RecipeDetailPage
 );

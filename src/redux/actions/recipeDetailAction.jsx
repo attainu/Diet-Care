@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SET_RECIPE_DETAIL, SET_SUBSTITUTE } from "../actionTypes";
+import { SET_RECIPE_DETAIL, SET_SIMILAR } from "../actionTypes";
 import keys from "../../config";
 
 export const fetchRecipeDetail = (recipeId) => {
@@ -19,14 +19,14 @@ export const fetchRecipeDetail = (recipeId) => {
   };
 };
 
-export const fetchSubstitute = (ingrName) => {
+export const fetchSimilar = (recipeId) => {
   return async (dispatch) => {
     const { data } = await axios(
-      `${keys.BASE_URL}/food/ingredients/substitutes?apiKey=${keys.API_KEY}&ingredientName=${ingrName}
+      `${keys.BASE_URL}/recipes/${recipeId}/similar?apiKey=${keys.API_KEY}
       `
     );
     dispatch({
-      type: SET_SUBSTITUTE,
+      type: SET_SIMILAR,
       payload: data,
     });
   };

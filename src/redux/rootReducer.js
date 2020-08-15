@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   userState: userReducer,
   mealplansState: mealplansReducer,
   recipeDetailState: recipeDetailReducer,
-  substitute: recipeDetailReducer,
+  similar: recipeDetailReducer,
   grocerState: groceryReducer,
 });
 
