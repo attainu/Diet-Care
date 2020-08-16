@@ -1,5 +1,6 @@
 .card-section {
   display: flex;
   background-color: white;
-  margin: auto
+  margin: auto;
+  margin-top: 4.5rem;
 }

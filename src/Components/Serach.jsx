@@ -33,7 +33,7 @@ export class Serach extends Component {
 
   render() {
     return (
-      <form className="input-group" style={{ width: "40%", outline: "none" }}>
+      <form className="input-group" style={{ width: "20%", outline: "none" }}>
         <input
           value={this.state.searchvalue}
           onChange={this.handlechange}
@@ -48,7 +48,7 @@ export class Serach extends Component {
           <Link to="/">
             <button
               onClick={this.handleclick}
-              style={{ background: "#C2C2C2", color: "white" }}
+              style={{ background: "black", color: "white" }}
               className="btn btn-outline-secondary"
               type="button"
               id="button-addon2"

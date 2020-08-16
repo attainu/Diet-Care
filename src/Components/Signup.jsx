@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../CSS/LoginForm.css";
 import Logo from "../images/foodbg.jpg";
 import { Button } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { userSignup } from "../redux/actions/userActions";
 import { connect } from "react-redux";
 import Navbar from "../Components/Navbar";
@@ -21,8 +21,8 @@ export class Signup extends Component {
     });
     await this.setState({ userName: "", email: "" });
     alert(`username: ${this.props.userData.username}
-hash: ${this.props.userData.hash}
-Please remember this for future reference`);
+    hash: ${this.props.userData.hash}
+    Please remember this for future reference`);
   };
 
   render() {

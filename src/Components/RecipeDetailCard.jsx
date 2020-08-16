@@ -6,6 +6,13 @@ import { Button } from "reactstrap";
 
 const RecipeDetailCard = ({ recipeDetail, similar }) => {
   console.log("similar", similar);
+  const titleShorter = (title) => {
+    if (title.length <= 25) {
+      return title;
+    } else {
+      return `${title.slice(0, 25)}...`;
+    }
+  };
 
   return !!recipeDetail && !!similar ? (
     <div className="detailPage">
@@ -73,7 +80,7 @@ const RecipeDetailCard = ({ recipeDetail, similar }) => {
             if (recipe && (index === 2 || index === 3 || index === 5)) {
               return (
                 <div className="similarRecipe__card" key={recipe.id}>
-                  <h4>{recipe.title}</h4>
+                  <h4>{titleShorter(recipe.title)}</h4>
                   <span>
                     <strong>
                       <ion-icon name="server-sharp"></ion-icon> Servings:{" "}

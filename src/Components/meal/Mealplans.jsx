@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MealplanItem from "./MealplanItem";
 import "../CSS/Mealplans.css";
-import { setMealplans } from "../redux/actions/mealplansAction";
+import { setMealplans } from "../../redux/actions/mealplansAction";
 import { connect } from "react-redux";
 
 export class Mealplans extends Component {

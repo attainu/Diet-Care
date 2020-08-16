@@ -1,4 +1,4 @@
-.dietcare-navbar {
+/* .dietcare-navbar {
   display: flex;
   align-items: center;
   width: 100%;
@@ -6,11 +6,8 @@
   justify-content: space-between;
   padding: 0 30px;
   background: #0F2027;
-  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -27,9 +24,7 @@
 .navbar-ul {
   display: flex;
   list-style: none;
-  /* width: 22%; */
   justify-content: space-between;
-  /* margin-bottom: 0 !important; */
 }
 
 .navbar-ul li {
@@ -46,10 +41,44 @@
 
 .navbar-ul li:hover {
   transform: scale(1.1);
-  background: transparent;
 }
 
 li i {
   font-size: 1.1rem;
   padding-right: 8px;
+}
+
+.profileDrop-content {
+  display: none;
+  position: relative;
+  background: rgb(163, 161, 163);
+  color: #bec4c7;
+  z-index: 10;
+}
+
+.profileDrop:hover .profileDrop-content {
+  display: block;
+} */
+
+.navbar {
+  height: 8vh;
+  background: #0f2027 !important;
+  background: -webkit-linear-gradient(to right,
+      #2c5364,
+      #203a43,
+      #0f2027) !important;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027) !important;
+}
+
+.navbar-brand img {
+  filter: none;
+}
+
+.navbar-collapse {
+  margin-left: 60rem;
+  font-size: 1.3rem;
+}
+
+.navbar Search {
+  margin-left: 200px;
 }

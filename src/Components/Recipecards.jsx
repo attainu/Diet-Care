@@ -12,7 +12,16 @@ export class Recipecards extends Component {
     return (
       <div className="dietcare-recipe-cards">
         {!this.props.recipes ? (
-          <h1>Loading...</h1>
+          <h1
+            style={{
+              height: "100vh",
+              width: "100vw",
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            Loading...
+          </h1>
         ) : (
           this.props.recipes.results.map((element) => {
             return <Recipecarditem key={element.id} recipe={element} />;

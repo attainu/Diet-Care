@@ -3,7 +3,7 @@ import "../CSS/Createmealplan.css";
 import {
   fetchMealplantemplates,
   addMealplans,
-} from "../redux/actions/mealplansAction";
+} from "../../redux/actions/mealplansAction";
 import { connect } from "react-redux";
 
 export class Createmealaplan extends Component {

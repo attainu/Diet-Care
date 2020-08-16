@@ -5,35 +5,87 @@ import Groceryitems from "../Components/Grocerycards";
 import Logo from "../images/dc-wb.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const Grocerysearchpage = (props) => {
+  const handleLogout = () => {
+    props.userLogout();
+  };
   return (
-    <div className="grocer_page">
-      <div className="grocery-navbar">
-        <Link to="/">
-          <img src={Logo} alt="logo" />
-        </Link>
-        <Search />
-        <ul className="grocery-list-nav">
-          <Link style={{ textDecoration: "none" }} to="/shoplist">
-            <li>
-              <i class="fas fa-shopping-basket"></i>Cart
-            </li>
-          </Link>
-          {!props.userData ? null : (
-            <li>
-              <i className="fas fa-user"></i> My Profile
-            </li>
-          )}
-          {props.userData ? null : (
-            <Link style={{ textDecoration: "none" }} to="/signup">
-              <li>Login/Signup</li>
+    <>
+      <div>
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          fixed="top"
+          bg="dark"
+          variant="dark"
+        >
+          <Navbar.Brand>
+            <Link to="/">
+              <img src={Logo} alt="logo" />
             </Link>
-          )}
-        </ul>
+          </Navbar.Brand>
+          <Search />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {!props.userData ? null : (
+              <Nav className="mr-auto">
+                <Nav.Link>
+                  <Link
+                    style={{ textDecoration: "none", color: "inherit" }}
+                    to="/searchGroceryItem"
+                  >
+                    Grocery
+                  </Link>
+                </Nav.Link>
+                <NavDropdown title="My Profile" id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="#action/3.2">
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        listStyle: "none",
+                        color: "inherit",
+                      }}
+                      to="/shoplist"
+                    >
+                      <ion-icon
+                        style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
+                        name="cart-sharp"
+                      ></ion-icon>{" "}
+                      Cart
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">
+                    <span>
+                      {!props.userData ? null : (
+                        <li onClick={handleLogout}>Logout</li>
+                      )}
+                    </span>
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                </NavDropdown>
+              </Nav>
+            )}
+            {props.userData ? null : (
+              <Link
+                style={{
+                  textDecoration: "none",
+                  listStyle: "none",
+                  color: "white",
+                  fontSize: "1.5rem",
+                }}
+                to="/login"
+              >
+                <li>Login</li>
+              </Link>
+            )}
+          </Navbar.Collapse>
+        </Navbar>
+
+        <Groceryitems />
       </div>
-      <Groceryitems />
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../images/bg-grocery.jpg";
+// import logo from "../images/bg-grocery.jpg";
 import {
   fetchGroceryProducts,
   fetchGroceryProductsSuggestions,
@@ -28,46 +28,46 @@ export class Serachgroceryitem extends Component {
 
     return (
       <>
-      <form className="input-group" style={{ width: "40%", outline: "none" }}>
-        <input
-          style={{ outline: "none" }}
-          type="text"
-          className="form-control"
-          placeholder="Search grocery item..."
-          aria-label="Recipient's username"
-          aria-describedby="button-addon2"
-          onChange={this.handleChange}
-          value={this.state.searchQuery}
-        />
-        <div className="input-group-append">
-          <button
-            style={{ background: "#C2C2C2", color: "white" }}
-            className="btn btn-outline-secondary"
-            type="button"
-            id="button-addon2"
-            onClick={this.handleClick}
-          >
-            Search
-          </button>
-        </div>
-        {this.state.suggestionState ? (
-          <ul>
-            {!this.props.suggestionList ? (
-              <h1>load</h1>
-            ) : (
-              this.props.suggestionList.results.map((element) => {
-                return (
-                  <li key={element.id} onClick={this.handleClicklist}>
-                    {element.title}
-                  </li>
-                );
-              })
-            )}
-          </ul>
-        ) : null}
-      </form>
+        <form className="input-group" style={{ width: "40%", outline: "none" }}>
+          <input
+            style={{ outline: "none" }}
+            type="text"
+            className="form-control"
+            placeholder="Search grocery item..."
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+            onChange={this.handleChange}
+            value={this.state.searchQuery}
+          />
+          <div className="input-group-append">
+            <button
+              style={{ background: "black", color: "white" }}
+              className="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+              onClick={this.handleClick}
+            >
+              <ion-icon
+                name="search-sharp"
+                style={{ fontSize: "1rem" }}
+              ></ion-icon>
+            </button>
+          </div>
+          {this.state.suggestionState ? (
+            <ul>
+              {!this.props.suggestionList
+                ? null
+                : this.props.suggestionList.results.map((element) => {
+                    return (
+                      <li key={element.id} onClick={this.handleClicklist}>
+                        {element.title}
+                      </li>
+                    );
+                  })}
+            </ul>
+          ) : null}
+        </form>
       </>
-
     );
   }
 }
