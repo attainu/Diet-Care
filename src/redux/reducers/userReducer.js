@@ -1,4 +1,8 @@
-import { SET_USER, TOGGLE_USER_FETCHING_STATE } from "../actionTypes";
+import {
+  SET_USER,
+  LOGOUT_USER,
+  TOGGLE_USER_FETCHING_STATE,
+} from "../actionTypes";
 const initialState = {
   user: JSON.parse(localStorage.getItem("user")) || null,
   userfetchingState: false,
@@ -9,6 +13,8 @@ const userReducer = (state = initialState, action) => {
   switch (type) {
     case SET_USER:
       return { ...state, user: payload };
+    case LOGOUT_USER:
+      return { ...state, user: null };
     case TOGGLE_USER_FETCHING_STATE:
       return { ...state, userfetchingState: !state.userfetchingState };
     default:

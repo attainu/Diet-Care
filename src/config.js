@@ -1,5 +1,5 @@
 const keys = {
-  API_KEY: "df3a2e9109734065adb989f76723f467",
+  API_KEY: "bb7ac56e27744cc0a72f588ca880ecf2",
   BASE_URL: "https://api.spoonacular.com",
 };
 

@@ -4,7 +4,11 @@ import Logo from "../images/dc-wb.png";
 import Search from "./Serach";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { userLogout } from "../redux/actions/userActions";
 const Navbar = (props) => {
+  const handleLogout = () => {
+    props.userLogout();
+  };
   return (
     <div className="dietcare-navbar">
       <Link to="/">
@@ -28,7 +32,7 @@ const Navbar = (props) => {
             <i className="fas fa-user"></i> My Profile
           </li>
         )}
-
+        {!props.userData ? null : <li onClick={handleLogout}>Logout</li>}
         {props.userData ? null : (
           <Link style={{ textDecoration: "none" }} to="/signup">
             <li>Login/Signup</li>
@@ -44,4 +48,4 @@ const mapStatetoprops = (storeData) => {
   };
 };
 
-export default connect(mapStatetoprops)(Navbar);
+export default connect(mapStatetoprops, { userLogout: userLogout })(Navbar);

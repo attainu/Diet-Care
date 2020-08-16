@@ -1,4 +1,8 @@
-import { SET_USER, TOGGLE_USER_FETCHING_STATE } from "../actionTypes";
+import {
+  SET_USER,
+  TOGGLE_USER_FETCHING_STATE,
+  LOGOUT_USER,
+} from "../actionTypes";
 import axios from "axios";
 import key from "../../config";
 
@@ -25,6 +29,15 @@ export const userLogin = (userData) => {
     dispatch({
       type: SET_USER,
       payload: userData,
+    });
+  };
+};
+
+export const userLogout = () => {
+  return async (dispatch) => {
+    localStorage.removeItem("user");
+    dispatch({
+      type: LOGOUT_USER,
     });
   };
 };
