@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap");
+
+
+.dietcare-sidebar {
+  width: 250px;
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  flex-shrink: 0;
+  border-right: 1px solid rgb(236, 235, 235);
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  color: whitesmoke;
+
+}
+
+.sidebar-ul {
+  list-style: none;
+}
+
+.sidebar-ul li {
+  font-size: 1rem;
+  border-top: 1px solid rgb(236, 235, 235);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar-ul li i {
+  color: whitesmoke;
+}
+
+.dropdown-options ul {
+  padding-left: 15px;
+}
+
+.dropdown-options ul li {
+  display: flex;
+  border: none;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+
+.dropdown-options ul li i {
+  color: whitesmoke;
+  font-size: 14px;
+}

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import logo from "../images/bg-grocery.jpg";
 import {
   fetchGroceryProducts,
   fetchGroceryProductsSuggestions,
 } from "../redux/actions/groceryActions";
 import { connect } from "react-redux";
+import "../CSS/Searchgroceryitem.css";
 export class Serachgroceryitem extends Component {
   state = {
     searchQuery: "",
@@ -25,6 +27,7 @@ export class Serachgroceryitem extends Component {
     console.log(this.props.suggestionList);
 
     return (
+      <>
       <form className="input-group" style={{ width: "40%", outline: "none" }}>
         <input
           style={{ outline: "none" }}
@@ -63,6 +66,8 @@ export class Serachgroceryitem extends Component {
           </ul>
         ) : null}
       </form>
+      </>
+
     );
   }
 }

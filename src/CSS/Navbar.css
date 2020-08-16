@@ -5,7 +5,13 @@
   height: 80px;
   justify-content: space-between;
   padding: 0 30px;
-  background-image: linear-gradient(181.3deg, rgba(134, 15, 15, 1) 24.9%, rgba(183, 10, 10, 1) 46.9%, rgba(210, 70, 0, 1) 85.1%);
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .dietcare-navbar img {
@@ -15,26 +21,25 @@
 }
 
 .input-group-append button {
-  background: #BC1608 !important;
+  background: transparent !important;
 }
 
 .navbar-ul {
   display: flex;
   list-style: none;
-  width: 22%;
+  /* width: 22%; */
   justify-content: space-between;
-  margin-bottom: 0 !important;
+  /* margin-bottom: 0 !important; */
 }
 
 .navbar-ul li {
   font-size: 1.05rem;
   font-weight: 600;
   color: white;
-  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
-  padding: 8px 8px;
+  margin: 1rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
-  margin-right: 20px;
   cursor: pointer;
   transition-duration: 0.2s;
 }

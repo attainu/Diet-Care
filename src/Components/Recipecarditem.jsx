@@ -8,10 +8,10 @@ const Recipecarditem = (props) => {
   // console.log(props.recipe.id);
 
   const titleShorter = (title) => {
-    if (title.length <= 50) {
+    if (title.length <= 30) {
       return title;
     } else {
-      return `${title.slice(0, 49)}...`;
+      return `${title.slice(0, 30)}...`;
     }
   };
 
@@ -30,6 +30,7 @@ const Recipecarditem = (props) => {
           <CardImg top width="100%" src={props.recipe.image} alt="Card" />
           <CardBody>
             <CardTitle>{props.recipe.title}</CardTitle>
+            <CardTitle>{titleShorter(props.recipe.title)}</CardTitle>
             {/* <CardText>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
