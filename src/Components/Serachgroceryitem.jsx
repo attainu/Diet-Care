@@ -22,6 +22,8 @@ export class Serachgroceryitem extends Component {
     this.setState({ suggestionState: !this.state.suggestionState });
   };
   render() {
+    console.log(this.props.suggestionList);
+
     return (
       <form className="input-group" style={{ width: "40%", outline: "none" }}>
         <input
@@ -47,15 +49,17 @@ export class Serachgroceryitem extends Component {
         </div>
         {this.state.suggestionState ? (
           <ul>
-            {!this.props.suggestionList
-              ? null
-              : this.props.suggestionList.results.map((element) => {
-                  return (
-                    <li key={element.id} onClick={this.handleClicklist}>
-                      {element.title}
-                    </li>
-                  );
-                })}
+            {!this.props.suggestionList ? (
+              <h1>load</h1>
+            ) : (
+              this.props.suggestionList.results.map((element) => {
+                return (
+                  <li key={element.id} onClick={this.handleClicklist}>
+                    {element.title}
+                  </li>
+                );
+              })
+            )}
           </ul>
         ) : null}
       </form>

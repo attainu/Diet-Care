@@ -22,6 +22,15 @@ const Recipecarditem = (props) => {
         <CardBody>
           <CardTitle>{titleShorter(props.recipe.title)}</CardTitle>
           {/* <CardText>
+      <Link
+        style={{ textDecoration: "none", color: "inherit" }}
+        to={`/recipe/${props.recipe.id}`}
+      >
+        <Card>
+          <CardImg top width="100%" src={props.recipe.image} alt="Card" />
+          <CardBody>
+            <CardTitle>{props.recipe.title}</CardTitle>
+            {/* <CardText>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </CardText> */}

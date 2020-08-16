@@ -37,17 +37,7 @@ const RecipeDetailCard = ({ recipeDetail, similar }) => {
             </strong>{" "}
             {recipeDetail.readyInMinutes} Minutes
           </span>
-          <p id="summary">
-            This is dummy copy. It is not meant to be read. It has been placed
-            here solely to demonstrate the look and feel of finished, typeset
-            text. Only for show. He who searches for meaning here will be sorely
-            disappointed. After all, you have many other things you should be
-            doing. Who's paying you to waste this time, anyway? <br />
-            It's Greek to you. Unless, of course, you're Greek, in which case,
-            it really makes no sense. Why, you can't even read it! It is
-            strictly for mock-ups. You may mock it up as strictly as you wish.
-            Meaningless mock-up, mock turtle soup spilled on a mock turtle neck.
-          </p>
+          <p id="summary">{`${recipeDetail.summary}`}</p>
         </div>
         <hr />
       </div>
