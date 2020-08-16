@@ -15,7 +15,11 @@ const Navbar = (props) => {
       <ul className="navbar-ul">
         <Link style={{ textDecoration: "none" }} to="/shoplist">
           <li>
-            <i class="fas fa-shopping-basket"></i>Cart
+            <ion-icon
+              style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
+              name="cart-sharp"
+            ></ion-icon>{" "}
+            Cart
           </li>
         </Link>
 

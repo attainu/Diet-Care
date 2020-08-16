@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import logo from "../images/bg-grocery.jpg";
 import {
   fetchGroceryProducts,
   fetchGroceryProductsSuggestions,
 } from "../redux/actions/groceryActions";
 import { connect } from "react-redux";
+import "../CSS/Searchgroceryitem.css";
 export class Serachgroceryitem extends Component {
   state = {
     searchQuery: "",
@@ -25,6 +27,7 @@ export class Serachgroceryitem extends Component {
     console.log(this.props.suggestionList);
 
     return (
+      <>
       <form className="input-group" style={{ width: "40%", outline: "none" }}>
         <input
           style={{ outline: "none" }}
@@ -49,20 +52,20 @@ export class Serachgroceryitem extends Component {
         </div>
         {this.state.suggestionState ? (
           <ul>
-            {!this.props.suggestionList ? (
-              <h1>load</h1>
-            ) : (
-              this.props.suggestionList.results.map((element) => {
-                return (
-                  <li key={element.id} onClick={this.handleClicklist}>
-                    {element.title}
-                  </li>
-                );
-              })
-            )}
+            {!this.props.suggestionList
+              ? null
+              : this.props.suggestionList.results.map((element) => {
+                  return (
+                    <li key={element.id} onClick={this.handleClicklist}>
+                      {element.title}
+                    </li>
+                  );
+                })}
           </ul>
         ) : null}
       </form>
+      </>
+
     );
   }
 }

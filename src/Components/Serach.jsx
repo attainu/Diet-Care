@@ -53,7 +53,10 @@ export class Serach extends Component {
               type="button"
               id="button-addon2"
             >
-              Search
+              <ion-icon
+                name="search-sharp"
+                style={{ fontSize: "1rem" }}
+              ></ion-icon>
             </button>
           </Link>
         </div>

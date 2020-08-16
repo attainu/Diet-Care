@@ -12,7 +12,8 @@
 }
 
 .shop td {
-    text-align: center;
+    text-align: left;
+    padding-left: 2rem !important;
 }
 
 .shop tr button {
@@ -27,7 +28,7 @@
     border-radius: 20%;
 }
 
-.shop button{
+.shop button {
     background-color: #ed9702;
     border: none;
     color: white;
@@ -38,10 +39,10 @@
     font-size: 25px;
 }
 
-.shop tr button:hover{
+.shop tr button:hover {
     background-color: red;
 }
 
-.shop td:hover{
+.shop td:hover {
     background-color: #eed5ab;
 }
