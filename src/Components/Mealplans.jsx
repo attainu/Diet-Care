@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 export class Mealplans extends Component {
   componentDidMount() {
-    this.props.setMealplans(this.props.userData, "2020-06-01");
+    this.props.setMealplans(this.props.userData, "2020-05-15");
   }
   render() {
     return (
