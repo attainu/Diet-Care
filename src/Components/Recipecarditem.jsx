@@ -25,8 +25,7 @@ const Recipecarditem = (props) => {
           <CardImg top width="100%" src={props.recipe.image} alt="Card" />
           <CardBody>
             <CardTitle>{titleShorter(props.recipe.title)}</CardTitle>
-
-            <hr />
+            <div className="line"></div>
             <Link
               style={{ textDecoration: "none", color: "inherit" }}
               to={`/recipe/${props.recipe.id}`}

@@ -1,16 +1,12 @@
 .grocery_card {
-  width: 22%;
-  height: 21rem;
-  margin-top: 5rem;
-  box-shadow: 0 0 10px -1px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 1rem;
-  background: #0F2027;
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  text-align: center;
+  flex-basis: 30%;
+  margin: 1.5rem;
+  border-radius: 0%;
+  border: 0px solid black;
+  font-family: "Roboto Slab", serif;
+  margin-top: 4rem;
+
 
 }
 
@@ -23,19 +19,15 @@
 }
 
 .grocery_card img {
-  width: 231px;
-  height: 231px;
+  width: 20rem;
+  height: 20rem;
+  align-self: center;
 }
 
 .grocery_card button {
   background-color: #ff7e1a;
   color: white;
   border: none;
-  padding: 4px 20px;
+  padding: 0.25rem 1rem;
   border-radius: 5px;
-  transition-duration: 0.1s;
-}
-
-.grocery_card button:hover {
-  transform: scale(1.05);
 }

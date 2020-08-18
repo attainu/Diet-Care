@@ -14,14 +14,11 @@
   border: 0px solid transparent;
 }
 
-.card hr {
-  width: 100%;
+.line {
   background-color: black;
   height: 0.08rem;
   text-align: center;
-  width: 10vw;
-  text-align: center;
-  margin-left: 7.2rem;
+  margin: 1rem 8rem;
 }
 
 .btn-secondary {
@@ -44,7 +41,6 @@
   border: 0px !important;
   width: 25vw !important;
   transition: transform 0.4s;
-
 }
 
 .card:hover {
@@ -61,4 +57,14 @@
   font-weight: 600;
   font-size: 1.4rem;
   text-align: center;
+}
+
+@media (max-width: 420px) {
+  .card {
+    width: 50vw !important;
+  }
+
+  .card-title {
+    font-size: inherit;
+  }
 }

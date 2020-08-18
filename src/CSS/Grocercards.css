@@ -1,45 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
 
-.grocer_cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  background-image: url("../images/recipe-bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 100vw 100vh;
-}
-
-.grocer_background {
-  display: flex;
-  flex-wrap: wrap;
-  background-image: url("../images/recipe-bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 100vw 100vh;
-}
-
-.grocer_section {
-  position: relative;
-  background-color: transparent;
-  align-self: center;
-  justify-self: center;
-  margin-left: 10rem;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-
-.grocer_section img {
-  height: 20rem;
+.image img {
   width: 20vw;
+  height: 30vh;
+  padding-bottom: 1rem;
   filter: none;
-  transition: transform 0.4s;
-
 }
 
-.grocer_section img:hover {
-  transform: scale(1.035);
+.col-3 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 
+.grocery-section {
+  margin-top: 4rem;
+  color: white;
+  text-align: center;
+  height: 85.5vh;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding-top: 2rem;
+}
+
+.grocery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-image: url("../images/recipe-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }

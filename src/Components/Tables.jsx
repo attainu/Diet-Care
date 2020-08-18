@@ -20,32 +20,38 @@ export class Tables extends Component {
   };
   render() {
     return (
-      <Table striped>
-        <thead>
-          <tr>
-            <th>Products</th>
-            <th>Rs.</th>
-          </tr>
-        </thead>
-        <tbody>
-          {!this.props.groceryItems
-            ? null
-            : this.props.groceryItems.aisles.map((element) => {
-                return (
-                  <tr>
-                    <td>{element.items[0].name}</td>
-                    <td>{element.items[0].cost}</td>
-                    <button
-                      data-id={element.items[0].id}
-                      onClick={this.handleClick}
-                    >
-                      Delete
-                    </button>
-                  </tr>
-                );
-              })}
-        </tbody>
-      </Table>
+      <div className="container-fluid section-2">
+        <div className="row justify-content-md-center">
+          <div className="col-lg-12">
+            <Table striped>
+              <thead>
+                <tr>
+                  <th>Products</th>
+                  <th>Rs.</th>
+                </tr>
+              </thead>
+              <tbody>
+                {!this.props.groceryItems
+                  ? null
+                  : this.props.groceryItems.aisles.map((element) => {
+                      return (
+                        <tr>
+                          <td>{element.items[0].name}</td>
+                          <td>{element.items[0].cost}</td>
+                          <button
+                            data-id={element.items[0].id}
+                            onClick={this.handleClick}
+                          >
+                            Delete
+                          </button>
+                        </tr>
+                      );
+                    })}
+              </tbody>
+            </Table>
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../CSS/LoginForm.css";
 import Logo from "../images/foodbg.jpg";
 import { Button } from "reactstrap";
-import { Link, Redirect } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import { userSignup } from "../redux/actions/userActions";
 import { connect } from "react-redux";
 import Navbar from "../Components/Navbar";

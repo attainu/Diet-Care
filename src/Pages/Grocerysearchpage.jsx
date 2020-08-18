@@ -5,7 +5,8 @@ import Groceryitems from "../Components/Grocerycards";
 import Logo from "../images/dc-wb.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { userLogout } from "../redux/actions/userActions";
+import { Navbar, Nav, NavDropdown, Breadcrumb } from "react-bootstrap";
 
 const Grocerysearchpage = (props) => {
   const handleLogout = () => {
@@ -26,9 +27,10 @@ const Grocerysearchpage = (props) => {
               <img src={Logo} alt="logo" />
             </Link>
           </Navbar.Brand>
-          <Search />
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
+            <Search />
+
             {!props.userData ? null : (
               <Nav className="mr-auto">
                 <Nav.Link>
@@ -82,6 +84,15 @@ const Grocerysearchpage = (props) => {
             )}
           </Navbar.Collapse>
         </Navbar>
+        <Breadcrumb style={{ position: "relative", top: "4rem" }}>
+          <Breadcrumb.Item
+            href="/"
+            style={{ textDecorationLine: "none", color: "inherit" }}
+          >
+            Home
+          </Breadcrumb.Item>
+          <Breadcrumb.Item href="/searchGroceryItem">Grocery</Breadcrumb.Item>
+        </Breadcrumb>
 
         <Groceryitems />
       </div>
@@ -95,4 +106,4 @@ const mapStatetoprops = (storeData) => {
   };
 };
 
-export default connect(mapStatetoprops)(Grocerysearchpage);
+export default connect(mapStatetoprops, { userLogout })(Grocerysearchpage);

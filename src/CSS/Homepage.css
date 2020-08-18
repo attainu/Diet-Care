@@ -4,3 +4,10 @@
   margin: auto;
   margin-top: 4.5rem;
 }
+
+@media (max-width: 420px) {
+  .card-section {
+    margin-top: 3.2rem;
+
+  }
+}

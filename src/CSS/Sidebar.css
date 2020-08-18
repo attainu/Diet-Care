@@ -2,7 +2,7 @@
 
 
 .dietcare-sidebar {
-  width: 250px;
+  width: 15.6rem;
   background: #0F2027;
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
@@ -13,6 +13,12 @@
   font-weight: bold;
   color: whitesmoke;
 
+}
+
+@media (max-width:420px){
+  .dietcare-sidebar{
+    width: 7.5rem;
+  }
 }
 
 .sidebar-ul {

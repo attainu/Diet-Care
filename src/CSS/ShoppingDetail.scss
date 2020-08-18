@@ -27,9 +27,9 @@ h3 {
 }
 
 img {
-			max-width: 100%;
-			filter: drop-shadow(1px 1px 3px $color-secondary);
-		}
+	max-width: 100%;
+	filter: drop-shadow(1px 1px 3px $color-secondary);
+}
 
 /* ----- Product Section ----- */
 .product {
@@ -79,9 +79,9 @@ img {
 		position: absolute;
 		left: -3.5em;
 		top: 2em;
+		width: 70%;
 		max-width: 110%;
-		filter: saturate(150%) contrast(120%) hue-rotate(10deg)
-			drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+		filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
 	}
 }
 

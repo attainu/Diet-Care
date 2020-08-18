@@ -13,81 +13,42 @@ import { connect } from "react-redux";
 export class Grocerycards extends Component {
   render() {
     return (
-      <div className="grocer_cards">
+      <div className="grocery">
         {!this.props.groceryItems ? (
-          <div
-            style={{ width: "100vw", height: "100vh" }}
-            className="grocer_background"
-          >
-            <div
-              style={{
-                width: "81.2vw",
-                height: "70vh",
-                backgroundColor: "transparent",
-                overflow: "hidden",
-                padding: "0rem 0.5rem",
-              }}
-              className="grocer_section"
-            >
-              <h1
-                style={{
-                  textAlign: "center",
-                  color: "whitesmoke",
-                  fontSize: "3.5rem",
-                }}
-              >
-                Search your groceries
-              </h1>
-              <img
-                style={{ height: "16rem", paddingTop: "0px" }}
-                className=""
-                src={Logo1}
-                alt="img1"
-              />
-              <img
-                style={{ height: "22rem", paddingTop: "3rem" }}
-                className=""
-                src={Logo2}
-                alt="img2"
-              />
-              <img
-                style={{ height: "16rem" }}
-                className=""
-                src={Logo3}
-                alt="img3"
-              />
-              <img
-                style={{ height: "22rem", paddingTop: "3rem" }}
-                className=""
-                src={Logo4}
-                alt="img4"
-              />
-              <img
-                style={{ height: "16rem", marginTop: "-11rem" }}
-                className=""
-                src={Logo5}
-                alt="img5"
-              />
-              <img
-                style={{ height: "22rem", marginTop: "1rem" }}
-                className=""
-                src={Logo6}
-                alt="img6"
-              />
-              <img
-                style={{ height: "16rem", marginTop: "-11rem" }}
-                className=""
-                src={Logo7}
-                alt="img7"
-              />
-              <img
-                style={{ height: "22rem", marginTop: "1rem" }}
-                className=""
-                src={Logo8}
-                alt="img8"
-              />
+          <section className="grocery-section">
+            <div className="container-fluid image">
+              <h1>Search Your Groceries</h1>
+
+              <div className="row justify-content-md-center">
+                <div className="col-3">
+                  <img src={Logo1} alt="food1" />
+                </div>
+                <div className="col-3">
+                  <img src={Logo2} alt="food2" />
+                </div>
+                <div className="col-3">
+                  <img src={Logo3} alt="food3" />
+                </div>
+                <div className="col-3">
+                  <img src={Logo4} alt="food4" />
+                </div>
+              </div>
+              <div className="row justify-content-md-center">
+                <div className="col-3">
+                  <img src={Logo5} alt="food5" />
+                </div>
+                <div className="col-3">
+                  <img src={Logo6} alt="food6" />
+                </div>
+                <div className="col-3">
+                  <img src={Logo7} alt="food7" />
+                </div>
+                <div className="col-3">
+                  <img src={Logo8} alt="food8" />
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
         ) : (
           this.props.groceryItems.products.map((element) => {
             return <Grocercard key={element.id} product={element} />;

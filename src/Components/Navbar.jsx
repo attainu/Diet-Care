@@ -14,21 +14,16 @@ const NavBar = (props) => {
   return (
     <>
       <div>
-        <Navbar
-          collapseOnSelect
-          expand="lg"
-          fixed="top"
-          bg="dark"
-          variant="dark"
-        >
+        <Navbar expand="lg" fixed="top" bg="dark" variant="dark">
           <Navbar.Brand>
             <Link to="/">
               <img src={Logo} alt="logo" />
             </Link>
           </Navbar.Brand>
-          <Search />
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Toggle m-auto aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Search />
+
             {!props.userData ? null : (
               <Nav className="mr-auto">
                 <Nav.Link>
@@ -39,7 +34,7 @@ const NavBar = (props) => {
                     Grocery
                   </Link>
                 </Nav.Link>
-                <NavDropdown title="User" id="collasible-nav-dropdown">
+                <NavDropdown title="My Profile" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.2">
                     <Link
                       style={{
@@ -95,58 +90,4 @@ const mapStatetoprops = (storeData) => {
 export default connect(mapStatetoprops, { userLogout: userLogout })(NavBar);
 
 {
-  /* --------------- */
-}
-{
-  /* <div className="dietcare-navbar">
-        <Link to="/">
-          <img src={Logo} alt="logo" />
-        </Link>
-        <Search />
-
-        <ul className="navbar-ul">
-          <Link style={{ textDecoration: "none" }} to="/shoplist">
-            <li>
-              <ion-icon
-                style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
-                name="cart-sharp"
-              ></ion-icon>{" "}
-              Cart
-            </li>
-          </Link>
-
-          {!props.userData ? null : (
-            <li>
-              <i className="fas fa-user"></i>
-              <div className="profileDrop">
-                <span>My Profile</span>
-                <div className="profileDrop-content">
-                  <Link style={{ textDecoration: "none" }} to="/shoplist">
-                    <li>
-                      <ion-icon
-                        style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
-                        name="cart-sharp"
-                      ></ion-icon>{" "}
-                      Cart
-                    </li>
-                  </Link>
-                  <span>Username: </span>
-                  <span>Password: </span>
-                  <span>
-                    {!props.userData ? null : (
-                      <li onClick={handleLogout}>Logout</li>
-                    )}
-                  </span>
-                </div>
-              </div>
-            </li>
-          )}
-
-          {props.userData ? null : (
-            <Link style={{ textDecoration: "none" }} to="/login">
-              <li>Login</li>
-            </Link>
-          )}
-        </ul>
-      </div> */
-}
+  

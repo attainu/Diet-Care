@@ -16,7 +16,7 @@ export class Recipecards extends Component {
             style={{
               height: "100vh",
               width: "100vw",
-              color: "white",
+              color: "transparent",
               textAlign: "center",
             }}
           >

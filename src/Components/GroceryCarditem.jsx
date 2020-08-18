@@ -3,6 +3,7 @@ import "../CSS/Grocercarditem.css";
 import { connect } from "react-redux";
 import { addItemtoShoppingList } from "../redux/actions/shoppingActon";
 import { Link } from "react-router-dom";
+import { Card, CardImg, CardBody, CardTitle, Button } from "reactstrap";
 
 const groceryCarditem = (props) => {
   console.log(props);
@@ -24,20 +25,18 @@ const groceryCarditem = (props) => {
   };
   return (
     <div className="grocery_card">
-      <Link
-        style={{ textDecoration: "none" }}
-        to={`searchGroceryItem/${props.product.id}`}
-      >
-        <img src={props.product.image} alt="food" />{" "}
-      </Link>
-      <Link
-        style={{ textDecoration: "none" }}
-        to={`searchGroceryItem/:${props.product.id}`}
-      >
-        <h2>{titleShorter(titleShorter(props.product.title))}</h2>
-      </Link>
-
-      <button onClick={handleclick}>Add to Shopping List</button>
+      <Card>
+        <Link
+          style={{ textDecoration: "none", color: "inherit" }}
+          to={`searchGroceryItem/${props.product.id}`}
+        >
+          <CardImg top width="100%" src={props.product.image} alt="Card" />
+        </Link>
+        <CardBody>
+          <CardTitle>{titleShorter(props.product.title)}</CardTitle>
+          <Button onClick={handleclick}>Add to Cart</Button>
+        </CardBody>
+      </Card>
     </div>
   );
 };
@@ -50,3 +49,20 @@ const mapstatetoprops = (storeData) => {
 export default connect(mapstatetoprops, {
   addItemtoShoppingList: addItemtoShoppingList,
 })(groceryCarditem);
+
+{
+  /* <Link
+        style={{ textDecoration: "none" }}
+        to={`searchGroceryItem/${props.product.id}`}
+      >
+        <img src={props.product.image} alt="food" />{" "}
+      </Link>
+      <Link
+        style={{ textDecoration: "none" }}
+        to={`searchGroceryItem/:${props.product.id}`}
+      >
+        <h2>{titleShorter(titleShorter(props.product.title))}</h2>
+      </Link>
+
+      <button onClick={handleclick}>Add to Cart</button> */
+}
