@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   background-color: #f2f2f2;
-  height: 77vh;
+  height: 90vh;
   justify-content: space-between;
   padding-left: 60px;
 }
@@ -16,7 +16,7 @@
   box-shadow: 0 0 7px -1px;
   list-style: none;
   width: 500px;
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +61,7 @@
   top: 34px;
   left: 0px;
   width: 100%;
+  z-index: 1;
 }
 .template_popup li {
   border-bottom: 0.5px solid rgb(105, 105, 105);
@@ -69,4 +70,12 @@
   font-size: 1rem;
   padding: 3px 0 3px 3px;
   cursor: pointer;
+}
+#recipe {
+  width: 100%;
+}
+#recipe-li {
+  padding: 0;
+  border-top: none;
+  border-bottom: none;
 }

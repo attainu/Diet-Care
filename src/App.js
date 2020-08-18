@@ -8,6 +8,8 @@ import SignupPage from "./Pages/SignupPage";
 import Groceysearchpage from "./Pages/Grocerysearchpage";
 import ShoppingPage from "./Pages/ShoppingPage";
 import ShoppingDetailPage from "./Pages/ShoppingDetailPage";
+import Createmealplan from "./Components/Createmealaplan";
+import Mealplans from "./Components/Mealplans";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/searchGroceryItem" component={Groceysearchpage} />
         <Route exact path="/shoplist" component={ShoppingPage} />
+        <Route exact path="/createmealplan" component={Createmealplan} />
+        <Route exact path="/mealplans" component={Mealplans} />
         <Route
           exact
           path="/searchGroceryItem/:itemid"

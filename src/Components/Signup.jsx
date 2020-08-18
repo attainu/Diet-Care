@@ -6,6 +6,7 @@ import { Link, Redirect } from "react-router-dom";
 import { userSignup } from "../redux/actions/userActions";
 import { connect } from "react-redux";
 import Navbar from "../Components/Navbar";
+import { withRouter } from "react-router-dom";
 export class Signup extends Component {
   state = {
     userName: "",
@@ -23,6 +24,7 @@ export class Signup extends Component {
     alert(`username: ${this.props.userData.username}
     hash: ${this.props.userData.hash}
     Please remember this for future reference`);
+    this.props.history.push("/");
   };
 
   render() {
@@ -78,4 +80,6 @@ const mapstatetoprops = (storedata) => {
   };
 };
 
-export default connect(mapstatetoprops, { userSignup: userSignup })(Signup);
+export default connect(mapstatetoprops, { userSignup: userSignup })(
+  withRouter(Signup)
+);

@@ -2,11 +2,13 @@ import {
   SET_MEALPLANS,
   TOGGLE_MEALPLANS_FETCHING_STATE,
   SET_MEALPLAN_TEMPLATE,
+  SET_RECIPE_SUGGESTIONS,
 } from "../actionTypes";
 const initialState = {
   mealPlans: null,
   mealPlantemplates: null,
   mealplansfetchingState: false,
+  recipesuggestions: null,
 };
 
 const mealplansReducer = (state = initialState, action) => {
@@ -19,6 +21,8 @@ const mealplansReducer = (state = initialState, action) => {
         ...state,
         mealplansfetchingState: !state.mealplansfetchingState,
       };
+    case SET_RECIPE_SUGGESTIONS:
+      return { ...state, recipesuggestions: payload };
     case SET_MEALPLAN_TEMPLATE:
       return { ...state, mealPlantemplates: payload };
     default:

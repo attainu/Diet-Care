@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { userLogin } from "../redux/actions/userActions";
 import { connect } from "react-redux";
 import Navbar from "../Components/Navbar";
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -15,13 +16,14 @@ class Login extends Component {
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  handleClick = () => {
+  handleClick = async () => {
     const user = {
       username: this.state.userName,
       hash: this.state.hash,
     };
     this.props.userLogin(user);
-    this.setState({ userName: "", hash: "" });
+    await this.setState({ userName: "", hash: "" });
+    this.props.history.push("/");
   };
   render() {
     return (
@@ -70,4 +72,4 @@ class Login extends Component {
   }
 }
 
-export default connect(null, { userLogin: userLogin })(Login);
+export default connect(null, { userLogin: userLogin })(withRouter(Login));

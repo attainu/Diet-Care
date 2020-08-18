@@ -39,7 +39,7 @@ const NavBar = (props) => {
                     Grocery
                   </Link>
                 </Nav.Link>
-                <NavDropdown title="My Profile" id="collasible-nav-dropdown">
+                <NavDropdown title="User" id="collasible-nav-dropdown">
                   <NavDropdown.Item href="#action/3.2">
                     <Link
                       style={{
