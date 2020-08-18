@@ -11,10 +11,14 @@ export class Serachgroceryitem extends Component {
     searchQuery: "",
     suggestionState: true,
   };
+  handleblur = () => {
+    this.setState({ suggestionState: !this.state.suggestionState });
+  };
   handleChange = (event) => {
     this.setState({ searchQuery: event.target.value }, () => {
       this.props.fetchGroceryProductsSuggestions(this.state.searchQuery);
     });
+    this.setState({ suggestionState: true });
   };
   handleClick = () => {
     this.props.fetchGroceryProducts(this.state.searchQuery);
@@ -31,6 +35,7 @@ export class Serachgroceryitem extends Component {
         <form className="input-group" style={{ width: "40%", outline: "none" }}>
           <input
             style={{ outline: "none" }}
+            onBlur={this.handleblur}
             type="text"
             className="form-control"
             placeholder="Search grocery item..."

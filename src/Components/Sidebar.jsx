@@ -143,7 +143,12 @@ export class Sidebar extends Component {
       <div className="dietcare-sidebar">
         <ul className="sidebar-ul">
           <li onClick={this.handleClickdiet}>
-            Diet<i class="fas fa-chevron-down"></i>
+            Diet
+            {!this.state.diet ? (
+              <i class="fas fa-chevron-down"></i>
+            ) : (
+              <i class="fas fa-chevron-up"></i>
+            )}
           </li>
           {this.state.diet ? (
             <div className="dropdown-options">
@@ -163,7 +168,12 @@ export class Sidebar extends Component {
           ) : null}
 
           <li onClick={this.handleclickCalorie}>
-            Calorie<i class="fas fa-chevron-down"></i>
+            Calorie
+            {!this.state.calorie ? (
+              <i class="fas fa-chevron-down"></i>
+            ) : (
+              <i class="fas fa-chevron-up"></i>
+            )}
           </li>
           {this.state.calorie ? (
             <div className="dropdown-options">
@@ -196,7 +206,12 @@ export class Sidebar extends Component {
             </div>
           ) : null}
           <li onClick={this.handleClickintolerances}>
-            Intolerance<i class="fas fa-chevron-down"></i>
+            Intolerance
+            {!this.state.intolerance ? (
+              <i class="fas fa-chevron-down"></i>
+            ) : (
+              <i class="fas fa-chevron-up"></i>
+            )}
           </li>
           {this.state.intolerance ? (
             <div className="dropdown-options">
@@ -360,17 +375,29 @@ export class Sidebar extends Component {
             </div>
           ) : null}
           <li onClick={this.handleClicknutrients}>
-            Nutrients<i class="fas fa-chevron-down"></i>
+            Nutrients
+            {!this.state.nutrients ? (
+              <i class="fas fa-chevron-down"></i>
+            ) : (
+              <i class="fas fa-chevron-up"></i>
+            )}
           </li>
           {this.state.nutrients ? (
             <div className="dropdown-options">
               <ul>
                 <li onClick={this.handlecarbohydrates}>
                   Carbohydrates
-                  <i
-                    style={{ paddingLeft: "8px" }}
-                    class="fas fa-chevron-down"
-                  ></i>
+                  {!this.state.carbohydrates ? (
+                    <i
+                      style={{ paddingLeft: "8px" }}
+                      class="fas fa-chevron-down"
+                    ></i>
+                  ) : (
+                    <i
+                      style={{ paddingLeft: "8px" }}
+                      class="fas fa-chevron-up"
+                    ></i>
+                  )}
                 </li>
                 {this.state.carbohydrates ? (
                   <div className="dropdown-options">
@@ -404,10 +431,17 @@ export class Sidebar extends Component {
                 ) : null}
                 <li onClick={this.handleclickprotein}>
                   Protein{" "}
-                  <i
-                    style={{ paddingLeft: "8px" }}
-                    class="fas fa-chevron-down"
-                  ></i>
+                  {!this.state.protein ? (
+                    <i
+                      style={{ paddingLeft: "8px" }}
+                      class="fas fa-chevron-down"
+                    ></i>
+                  ) : (
+                    <i
+                      style={{ paddingLeft: "8px" }}
+                      class="fas fa-chevron-up"
+                    ></i>
+                  )}
                 </li>
                 {this.state.protein ? (
                   <div className="dropdown-options">
@@ -441,10 +475,17 @@ export class Sidebar extends Component {
                 ) : null}
                 <li onClick={this.handleclickfat}>
                   Fat
-                  <i
-                    style={{ paddingLeft: "8px" }}
-                    class="fas fa-chevron-down"
-                  ></i>
+                  {!this.state.fat ? (
+                    <i
+                      style={{ paddingLeft: "8px" }}
+                      class="fas fa-chevron-down"
+                    ></i>
+                  ) : (
+                    <i
+                      style={{ paddingLeft: "8px" }}
+                      class="fas fa-chevron-up"
+                    ></i>
+                  )}
                 </li>
                 {this.state.fat ? (
                   <div className="dropdown-options">
@@ -496,7 +537,12 @@ export class Sidebar extends Component {
             </div>
           ) : null}
           <li onClick={this.handleclickreadytime}>
-            Max Ready Time<i class="fas fa-chevron-down"></i>
+            Max Ready Time
+            {!this.state.readytime ? (
+              <i class="fas fa-chevron-down"></i>
+            ) : (
+              <i class="fas fa-chevron-up"></i>
+            )}
           </li>
           {this.state.readytime ? (
             <div className="dropdown-options">

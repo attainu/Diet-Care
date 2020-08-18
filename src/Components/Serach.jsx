@@ -17,10 +17,14 @@ export class Serach extends Component {
       suggestionState: true,
     };
   }
+  handleblur = () => {
+    this.setState({ suggestionState: !this.state.suggestionState });
+  };
 
   handlechange = (e) => {
     this.setState({ searchvalue: e.target.value });
     this.props.fetchautocompleteRecipes(this.state.searchvalue);
+    this.setState({ suggestionState: true });
   };
   handleclick = () => {
     this.props.fetchRecipes(this.state.searchvalue);
@@ -37,6 +41,7 @@ export class Serach extends Component {
         <input
           value={this.state.searchvalue}
           onChange={this.handlechange}
+          onBlur={this.handleblur}
           style={{ outline: "none" }}
           type="text"
           className="form-control"
