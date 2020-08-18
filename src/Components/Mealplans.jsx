@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import "../CSS/Mealplans.css";
 import { setMealplans } from "../redux/actions/mealplansAction";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 export class Mealplans extends Component {
   state = {
@@ -42,6 +43,12 @@ export class Mealplans extends Component {
             <MealplanItem mealplan={this.props.mealplan} />
           )}
         </div>
+        <h4 style={{ textAlign: "center", color: "white" }}>
+          Don't have any?{" "}
+          <Link style={{ textDecoration: "none" }} to="/createmealplan">
+            Create a Mealplan
+          </Link>
+        </h4>
       </div>
     );
   }
