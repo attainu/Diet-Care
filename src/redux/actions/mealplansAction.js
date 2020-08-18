@@ -49,32 +49,64 @@ export const fetchMealplantemplates = () => {
 //   };
 // };
 
+// export const setMealplans = (user, date) => {
+//   return async (dispatch) => {
+//     console.log(user, date);
+//     const data = await axios(
+//       `${keys.BASE_URL}/mealplanner/${user.username}/day/${date}?hash=${user.hash}&apiKey=${keys.API_KEY}`
+//     );
+//     console.log(data);
+//     dispatch({
+//       type: SET_MEALPLANS,
+//       payload: data,
+//     });
+//   };
+// };
+
 export const setMealplans = (user, date) => {
   return async (dispatch) => {
-    console.log(user, date);
-    const data = await axios(
-      `${keys.BASE_URL}/mealplanner/${user.username}/day/${date}?hash=${user.hash}&apiKey=${keys.API_KEY}`
-    );
-    console.log(data);
+    const data = await localStorage.getItem(`${user.username}_${date}`);
+
     dispatch({
       type: SET_MEALPLANS,
-      payload: data,
+      payload: JSON.parse(data),
     });
   };
 };
 
+// export const addMealplanofday = (user, mealtemplate) => {
+//   return async (dispatch) => {
+//     console.log(mealtemplate, user);
+//     const { data } = await axios.post(
+//       `${keys.BASE_URL}/mealplanner/${user.username}/items?hash=${user.hash}&apiKey=${keys.API_KEY}`,
+//       mealtemplate
+//     );
+//     console.log(data);
+//     dispatch({
+//       type: SET_MEALPLANS,
+//       payload: data,
+//     });
+//   };
+// };
+
 export const addMealplanofday = (user, mealtemplate) => {
-  return async (dispatch) => {
+  return async () => {
     console.log(mealtemplate, user);
-    const { data } = await axios.post(
-      `${keys.BASE_URL}/mealplanner/${user.username}/items?hash=${user.hash}&apiKey=${keys.API_KEY}`,
-      mealtemplate
-    );
-    console.log(data);
-    dispatch({
-      type: SET_MEALPLANS,
-      payload: data,
-    });
+    if (localStorage.getItem(`${user.username}_${mealtemplate.date}`)) {
+      const localStorageItme = JSON.parse(
+        localStorage.getItem(`${user.username}_${mealtemplate.date}`)
+      );
+      localStorageItme.push(mealtemplate);
+      await localStorage.setItem(
+        `${user.username}_${mealtemplate.date}`,
+        JSON.stringify(localStorageItme)
+      );
+    } else {
+      await localStorage.setItem(
+        `${user.username}_${mealtemplate.date}`,
+        JSON.stringify([mealtemplate])
+      );
+    }
   };
 };
 

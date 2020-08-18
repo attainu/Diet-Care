@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/Createmealplan.css";
+import Navbar from "./Navbar";
 import {
   addMealplanofday,
   setRecipesuggestions,
@@ -18,6 +19,14 @@ export class Createmealaplan extends Component {
     chosenRecipe: null,
     foodType: "",
     suggestrecipelistState: true,
+    servingstate: false,
+    serving: null,
+  };
+  handleclickservings = () => {
+    this.setState({ servingstate: !this.state.servingstate });
+  };
+  handleclickserving = (e) => {
+    this.setState({ serving: e.target.innerText });
   };
 
   handleclickchoose = () => {
@@ -65,8 +74,7 @@ export class Createmealaplan extends Component {
   };
   handleClickCreateMeal = () => {
     const finalChosenrecipe = this.state.chosenRecipe;
-    finalChosenrecipe.servings = 2;
-    delete finalChosenrecipe.image;
+    finalChosenrecipe.servings = this.state.serving;
     const mealplantemplate = {
       date: this.state.timeStamp,
       slot: this.state.mealslot,
@@ -74,21 +82,8 @@ export class Createmealaplan extends Component {
       type: this.state.foodType,
       value: finalChosenrecipe,
     };
-    delete mealplantemplate.image;
+
     this.props.addMealplanofday(this.props.userData, mealplantemplate);
-    // const mealplantemplate = {
-    //   date: 1589500800,
-    //   slot: 1,
-    //   position: 0,
-    //   type: "RECIPE",
-    //   value: {
-    //     id: 296213,
-    //     servings: 2,
-    //     title: "Spinach Salad with Roasted Vegetables and Spiced Chickpea",
-    //     imageType: "jpg",
-    //   },
-    // };
-    // this.props.addMealplanofday(this.props.userData, mealplantemplate);
   };
 
   // componentDidMount() {
@@ -109,79 +104,98 @@ export class Createmealaplan extends Component {
 
   render() {
     return (
-      <div className="create_mealplan">
-        <ul className="createmeal_card">
-          <li onClick={this.handleclickchoose} className="template_input">
-            Choose meal time{" "}
-            {this.state.mealtimeState ? (
-              <i class="fas fa-chevron-up"></i>
-            ) : (
-              <i class="fas fa-chevron-down"></i>
-            )}
-            {this.state.mealtimeState ? (
-              <ul className="template_popup">
-                <li onClick={this.handleclickmealtime}>Breakfast</li>
-                <li onClick={this.handleclickmealtime}>Lunch</li>
-                <li onClick={this.handleclickmealtime}>Dinner</li>
-              </ul>
-            ) : null}
-          </li>
-
-          <li onClick={this.handleclicktype} className="template_input">
-            Choose type of food{" "}
-            {this.state.typeState ? (
-              <i class="fas fa-chevron-up"></i>
-            ) : (
-              <i class="fas fa-chevron-down"></i>
-            )}
-            {this.state.typeState ? (
-              <ul className="template_popup">
-                <li onClick={this.handleclickfoodtype}>RECIPE</li>
-              </ul>
-            ) : null}
-          </li>
-          <li id="recipe-li" className="template_input">
-            <input
-              onChange={this.handleChangetypefood}
-              type="text"
-              name="recipe"
-              id="recipe"
-            />
-
-            {this.state.foodState ? (
-              <ul className="template_popup">
-                {!this.props.recipeSuggestions
-                  ? null
-                  : this.props.recipeSuggestions.results.map((element) => {
-                      return (
-                        <li key={element.id} onClick={this.handleclickfood}>
-                          {element.title}
-                        </li>
-                      );
-                    })}
-              </ul>
-            ) : null}
-          </li>
-
-          <li>
-            <h3>Choose Date:</h3>
-            <li>
-              <input
-                onChange={this.handleChangedate}
-                type="date"
-                name="date"
-                id="date"
-              />
+      <>
+        <Navbar />
+        <div className="create_mealplan">
+          <ul className="createmeal_card">
+            <li onClick={this.handleclickchoose} className="template_input">
+              Choose meal time{" "}
+              {this.state.mealtimeState ? (
+                <i class="fas fa-chevron-up"></i>
+              ) : (
+                <i class="fas fa-chevron-down"></i>
+              )}
+              {this.state.mealtimeState ? (
+                <ul className="template_popup">
+                  <li onClick={this.handleclickmealtime}>Breakfast</li>
+                  <li onClick={this.handleclickmealtime}>Lunch</li>
+                  <li onClick={this.handleclickmealtime}>Dinner</li>
+                </ul>
+              ) : null}
             </li>
-          </li>
 
-          <button onClick={this.handleClickCreateMeal}>Create Meal</button>
-        </ul>
-        <img
-          src="https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt="food image"
-        />
-      </div>
+            <li onClick={this.handleclicktype} className="template_input">
+              Choose type of food{" "}
+              {this.state.typeState ? (
+                <i class="fas fa-chevron-up"></i>
+              ) : (
+                <i class="fas fa-chevron-down"></i>
+              )}
+              {this.state.typeState ? (
+                <ul className="template_popup">
+                  <li onClick={this.handleclickfoodtype}>RECIPE</li>
+                </ul>
+              ) : null}
+            </li>
+            <li id="recipe-li" className="template_input">
+              <input
+                onChange={this.handleChangetypefood}
+                type="text"
+                name="recipe"
+                id="recipe"
+                placeholder="Search your recipe.."
+              />
+
+              {this.state.foodState ? (
+                <ul className="template_popup">
+                  {!this.props.recipeSuggestions
+                    ? null
+                    : this.props.recipeSuggestions.results.map((element) => {
+                        return (
+                          <li key={element.id} onClick={this.handleclickfood}>
+                            {element.title}
+                          </li>
+                        );
+                      })}
+                </ul>
+              ) : null}
+            </li>
+            <li onClick={this.handleclickservings} className="template_input">
+              Choose Servings{" "}
+              {this.state.servingstate ? (
+                <i class="fas fa-chevron-up"></i>
+              ) : (
+                <i class="fas fa-chevron-down"></i>
+              )}
+              {this.state.servingstate ? (
+                <ul className="template_popup">
+                  <li onClick={this.handleclickserving}>1</li>
+                  <li onClick={this.handleclickserving}>2</li>
+                  <li onClick={this.handleclickserving}>3</li>
+                </ul>
+              ) : null}
+            </li>
+
+            <li>
+              <h3>Choose Date:</h3>
+              <li>
+                <input
+                  onChange={this.handleChangedate}
+                  type="date"
+                  name="date"
+                  id="date"
+                />
+              </li>
+            </li>
+
+            <button onClick={this.handleClickCreateMeal}>Create Meal</button>
+          </ul>
+          <img
+            src="https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt="food image"
+          />
+        </div>
+      </>
     );
   }
 }
