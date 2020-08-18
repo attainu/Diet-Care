@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import "../CSS/Mealplans.css";
 import { setMealplans } from "../redux/actions/mealplansAction";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 export class Mealplans extends Component {
   state = {
@@ -24,7 +24,9 @@ export class Mealplans extends Component {
     this.props.setMealplans(this.props.userData, this.state.timeStamp);
   };
   render() {
-    return (
+    return !this.props.userData ? (
+      <Redirect to="/" />
+    ) : (
       <div className="mealpan_page">
         <Navbar />
         <div className="mealplan-date">

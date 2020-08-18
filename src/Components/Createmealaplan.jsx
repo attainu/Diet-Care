@@ -6,6 +6,7 @@ import {
   setRecipesuggestions,
 } from "../redux/actions/mealplansAction";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 export class Createmealaplan extends Component {
   state = {
@@ -103,7 +104,9 @@ export class Createmealaplan extends Component {
   // }
 
   render() {
-    return (
+    return !this.props.userData ? (
+      <Redirect to="/" />
+    ) : (
       <>
         <Navbar />
         <div className="create_mealplan">

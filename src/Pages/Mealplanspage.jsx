@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import "../CSS/Mealplanspage.css";
 import Mealplans from "../Components/Mealplans";
+import { connect } from "react-redux";
 
 const Mealplanspage = () => {
   return (
@@ -20,4 +21,4 @@ const Mealplanspage = () => {
   );
 };
 
-export default Mealplanspage;
+export default connect(mapStatetoprops)(Mealplanspage);
