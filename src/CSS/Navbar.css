@@ -21,6 +21,14 @@
   margin: auto;
 }
 
+.navbar-nav a {
+  font-weight: bold;
+  color: white !important;
+}
+
+.dropdown-menu a {
+  color: #0f2027 !important;
+}
 
 
 .navbar-collapse {
