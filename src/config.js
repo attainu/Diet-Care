@@ -1,6 +1,5 @@
 const keys = {
   API_KEY: "38410664eb85491c856a996503431983",
-
   BASE_URL: "https://api.spoonacular.com",
 };
 
