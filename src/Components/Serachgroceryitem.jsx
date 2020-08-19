@@ -35,7 +35,6 @@ export class Serachgroceryitem extends Component {
         <form className="input-group" style={{ width: "40%", outline: "none" }}>
           <input
             style={{ outline: "none" }}
-            onBlur={this.handleblur}
             type="text"
             className="form-control"
             placeholder="Search grocery item..."

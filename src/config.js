@@ -1,17 +1,6 @@
 const keys = {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  API_KEY: "7e437806234a46ab8ff799459e833d7b",
-=======
   API_KEY: "38410664eb85491c856a996503431983",
->>>>>>> Stashed changes
-=======
-  API_KEY: "38410664eb85491c856a996503431983",
->>>>>>> Stashed changes
-=======
-  API_KEY: "38410664eb85491c856a996503431983",
->>>>>>> Stashed changes
+
   BASE_URL: "https://api.spoonacular.com",
 };
 

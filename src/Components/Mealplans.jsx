@@ -38,6 +38,20 @@ export class Mealplans extends Component {
               name="date"
               id="date"
             />
+            <h4
+              style={{
+                textAlign: "center",
+                color: "white",
+                display: "inline-block",
+                fontSize: "1.2rem",
+                marginLeft: "30px",
+              }}
+            >
+              Don't have any?{" "}
+              <Link style={{ textDecoration: "none" }} to="/createmealplan">
+                Create a Mealplan
+              </Link>
+            </h4>
           </span>
         </div>
         <div className="mealplans">
@@ -45,12 +59,6 @@ export class Mealplans extends Component {
             <MealplanItem mealplan={this.props.mealplan} />
           )}
         </div>
-        <h4 style={{ textAlign: "center", color: "white" }}>
-          Don't have any?{" "}
-          <Link style={{ textDecoration: "none" }} to="/createmealplan">
-            Create a Mealplan
-          </Link>
-        </h4>
       </div>
     );
   }

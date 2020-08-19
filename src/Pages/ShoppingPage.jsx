@@ -1,11 +1,8 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import ShoppingList from "../Components/ShoppingList";
-<<<<<<< Updated upstream
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-=======
->>>>>>> Stashed changes
 import { Breadcrumb } from "react-bootstrap";
 
 const ShoppingPage = (props) => {

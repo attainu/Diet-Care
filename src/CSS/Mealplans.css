@@ -1,16 +1,15 @@
 .mealplans {
-  margin-top: 20px;
+  margin-top: 400px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
   width: 100%;
 }
 .choose-date {
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
-  margin-top: 30px;
+  margin-top: 80px;
 }
 .mealplan-date {
   display: flex;

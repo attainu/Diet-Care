@@ -35,7 +35,7 @@ const NavBar = (props) => {
                   </Link>
                 </Nav.Link>
                 <NavDropdown title="My Profile" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.2">
+                  <NavDropdown.Item>
                     <Link
                       style={{
                         textDecoration: "none",
@@ -51,13 +51,40 @@ const NavBar = (props) => {
                       Cart
                     </Link>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    <span>
-                      {!props.userData ? null : (
-                        <li onClick={handleLogout}>Logout</li>
-                      )}
-                    </span>
+                  <NavDropdown.Item>
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        listStyle: "none",
+                        color: "inherit",
+                      }}
+                      to="/mealplans"
+                    >
+                      <ion-icon
+                        style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
+                        name="fast-food-outline"
+                      ></ion-icon>{" "}
+                      Mealplans
+                    </Link>
                   </NavDropdown.Item>
+
+                  <NavDropdown.Item onClick={handleLogout}>
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        listStyle: "none",
+                        color: "inherit",
+                      }}
+                      to="/"
+                    >
+                      <ion-icon
+                        style={{ fontSize: "1.5rem", paddingRight: "0.5rem" }}
+                        name="log-out-outline"
+                      ></ion-icon>{" "}
+                      Logout
+                    </Link>
+                  </NavDropdown.Item>
+
                   <NavDropdown.Divider />
                 </NavDropdown>
               </Nav>
@@ -88,6 +115,3 @@ const mapStatetoprops = (storeData) => {
 };
 
 export default connect(mapStatetoprops, { userLogout: userLogout })(NavBar);
-
-{
-  

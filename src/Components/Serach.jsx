@@ -40,7 +40,6 @@ export class Serach extends Component {
         <input
           value={this.state.searchvalue}
           onChange={this.handlechange}
-          onBlur={this.handleblur}
           style={{ outline: "none" }}
           type="text"
           className="form-control"

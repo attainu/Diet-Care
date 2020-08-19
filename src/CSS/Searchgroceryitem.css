@@ -18,6 +18,7 @@
   color: black;
   padding-left: 10px;
   cursor: pointer;
+  z-index: 500;
 }
 
 .grocerySearch {
