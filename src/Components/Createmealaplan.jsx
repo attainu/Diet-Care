@@ -9,20 +9,25 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 export class Createmealaplan extends Component {
-  state = {
-    mealtimeState: false,
-    mealslot: null,
-    date: "",
-    timeStamp: null,
-    typeState: false,
-    foodtyped: "",
-    foodState: true,
-    chosenRecipe: null,
-    foodType: "",
-    suggestrecipelistState: true,
-    servingstate: false,
-    serving: null,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      mealtimeState: false,
+      mealslot: null,
+      date: "",
+      timeStamp: null,
+      typeState: false,
+      foodtyped: "",
+      foodState: true,
+      chosenRecipe: null,
+      foodType: "",
+      suggestrecipelistState: true,
+      servingstate: false,
+      serving: null,
+    };
+  }
+
   handleclickservings = () => {
     this.setState({ servingstate: !this.state.servingstate });
   };
@@ -30,7 +35,7 @@ export class Createmealaplan extends Component {
     this.setState({ serving: e.target.innerText });
   };
 
-  handleclickchoose = () => {
+  handleclickchoose = (e) => {
     this.setState({ mealtimeState: !this.state.mealtimeState });
   };
   handleclickmealtime = (e) => {
@@ -86,22 +91,6 @@ export class Createmealaplan extends Component {
 
     this.props.addMealplanofday(this.props.userData, mealplantemplate);
   };
-
-  // componentDidMount() {
-  //   const mealplantemplate = {
-  //     date: 1589500800,
-  //     slot: 1,
-  //     position: 0,
-  //     type: "RECIPE",
-  //     value: {
-  //       id: 296213,
-  //       servings: 2,
-  //       title: "Spinach Salad with Roasted Vegetables and Spiced Chickpea",
-  //       imageType: "jpg",
-  //     },
-  //   };
-  //   this.props.addMealplanofday(this.props.userData, mealplantemplate);
-  // }
 
   render() {
     return !this.props.userData ? (
